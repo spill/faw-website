@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Thanksgiving Popup -->
+    <div id="thanksgivingPopup" class="popup-overlay hidden">
+        <div class="popup-content">
+            <button class="popup-close-x" onclick="closeThanksgivingPopup()">&times;</button>
+            <div class="popup-icon">🦃</div>
+            <h2>Happy Thanksgiving!</h2>
+            <p>We will be closed for Thanksgiving week to spend time with our families. We'll be back to serve you after the holiday.</p>
+            <p><strong>Closed: November 25 - November 29, 2025</strong></p>
+            <p>We wish you and your loved ones a wonderful Thanksgiving!</p>
+            <button class="popup-close-btn" onclick="closeThanksgivingPopup()">Got It, Thanks!</button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -280,6 +293,23 @@
                 <div class="footer-col">
                     <h3>Fremont Auto Works</h3>
                     <p>Trusted auto repair in Fremont since 1995. We care, we listen, and we deliver.</p>
+                    <div class="social-buttons">
+                        <a href="https://share.google/0EpR73FJRibhXTg6l" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Google Reviews
+                        </a>
+                        <a href="https://www.yelp.com/biz/fremont-auto-works-fremont" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21.111 18.226c-.141.969-2.119 3.483-3.029 3.847-.311.124-.611.094-.85-.09-.154-.12-2.314-1.856-2.805-2.426a.896.896 0 0 1 .037-1.223l.996-.997a.896.896 0 0 1 1.223-.037c.59.492 2.305 2.651 2.425 2.805.184.239.214.539.09.85zM14.969 9.531a.896.896 0 0 1-.037 1.223l-.996.997a.896.896 0 0 1-1.223.037c-.59-.492-2.305-2.651-2.425-2.805-.184-.239-.214-.539-.09-.85.141-.969 2.119-3.483 3.029-3.847.311-.124.611-.094.85.09.154.12 2.314 1.856 2.805 2.426a.896.896 0 0 1-.037 1.223l-.996.997a.896.896 0 0 1-1.223.037z"/>
+                            </svg>
+                            Yelp Reviews
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>

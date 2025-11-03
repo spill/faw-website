@@ -26,6 +26,39 @@ if (mobileMenuToggle) {
     });
 }
 
+// Thanksgiving Popup
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if popup has been shown in this session
+    const popupShown = sessionStorage.getItem('thanksgivingPopupShown');
+    
+    if (!popupShown) {
+        // Show popup after a short delay
+        setTimeout(() => {
+            const popup = document.getElementById('thanksgivingPopup');
+            if (popup) {
+                popup.classList.remove('hidden');
+            }
+        }, 1000);
+    }
+});
+
+// Close popup function
+function closeThanksgivingPopup() {
+    const popup = document.getElementById('thanksgivingPopup');
+    if (popup) {
+        popup.classList.add('hidden');
+        sessionStorage.setItem('thanksgivingPopupShown', 'true');
+    }
+}
+
+// Close popup when clicking outside
+document.addEventListener('click', (e) => {
+    const popup = document.getElementById('thanksgivingPopup');
+    if (popup && e.target === popup) {
+        closeThanksgivingPopup();
+    }
+});
+
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
