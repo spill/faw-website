@@ -560,6 +560,152 @@ section {
     font-weight: 600;
 }
 
+/* Trust Badges Section */
+.trust-section {
+    background: var(--white);
+    padding: 5rem 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.trust-badge {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-accent);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.trust-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-green));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.trust-badge h4 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.trust-badge p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: var(--bg-accent);
+    padding: 5rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.faq-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-colored);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.faq-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Tips Page */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.tip-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-colored);
+}
+
+.tip-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-green));
+    color: var(--white);
+    padding: 1.5rem 2rem;
+}
+
+.tip-number {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.tip-header h3 {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.tip-content {
+    padding: 2rem;
+}
+
+.tip-content p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.tip-highlight {
+    background: var(--bg-accent);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+    margin-top: 1rem;
+}
+
+.tip-highlight strong {
+    color: var(--primary-color);
+}
+
 /* About Section */
 .about-hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--accent-green) 100%);
