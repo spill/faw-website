@@ -1,0 +1,48 @@
+/* Color Scheme 2: Bold Red & Charcoal */
+/* Powerful, energetic, automotive racing feel */
+
+:root {
+    /* Primary Colors - Bold Red */
+    --primary-color: #C62828;        /* Bold Red */
+    --primary-dark: #B71C1C;         /* Deep Red */
+    --accent-green: #D84315;         /* Burnt Orange-Red accent */
+
+    /* Neutral Colors */
+    --secondary-color: #212121;      /* Charcoal Gray */
+    --text-dark: #212121;            /* Charcoal Gray */
+    --text-light: #757575;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #FFEBEE;            /* Very Light Red tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(198, 40, 40, 0.15);  /* Red shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #B71C1C 0%, #C62828 50%, #D32F2F 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #B71C1C 0%, #C62828 50%, #D32F2F 100%) !important;
+}
+
+.cta {
+    background: linear-gradient(135deg, #B71C1C 0%, #C62828 100%) !important;
+}
+
+/* Add burnt orange accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #D84315 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #D84315, #BF360C) !important;
+}

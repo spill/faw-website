@@ -1,0 +1,49 @@
+/* Sky Blue Variation 2: Sky Blue & Golden Yellow */
+/* Bright, energetic, high-visibility combination */
+
+:root {
+    /* Primary Colors - Sky Blue */
+    --primary-color: #0288D1;        /* Sky Blue */
+    --primary-dark: #01579B;         /* Deep Sky Blue */
+    --accent-green: #FFC107;         /* Golden Yellow */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #1a1a1a;            /* Near Black */
+    --text-light: #666666;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #E1F5FE;            /* Light Sky Blue tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(2, 136, 209, 0.15);  /* Sky Blue shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #01579B 0%, #0288D1 50%, #039BE5 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #01579B 0%, #0288D1 50%, #039BE5 100%) !important;
+}
+
+.cta,
+.cta-section {
+    background: linear-gradient(135deg, #01579B 0%, #0288D1 100%) !important;
+}
+
+/* Add golden yellow accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #FFC107 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FFC107, #FFB300) !important;
+}

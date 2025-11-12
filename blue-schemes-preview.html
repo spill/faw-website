@@ -3,26 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fremont Auto Works - Trusted Auto Repair Since 1995</title>
+    <title>Fremont Auto Works - Sky Blue Color Schemes Preview</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Color scheme overlay will be loaded dynamically -->
+    <link id="colorSchemeLink" rel="stylesheet" href="">
+
+    <style>
+        /* Color Scheme Switcher Styles */
+        .scheme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            padding: 20px;
+            max-width: 320px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .scheme-switcher h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .scheme-switcher .subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .scheme-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scheme-btn {
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .scheme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .scheme-btn.active {
+            border-color: var(--primary-color, #1b5e20);
+            background: var(--bg-accent, #f0f4f0);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .scheme-btn .scheme-name {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .scheme-btn .scheme-desc {
+            display: block;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .scheme-colors {
+            display: flex;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .scheme-color {
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .toggle-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: var(--primary-color, #1b5e20);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toggle-switcher:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        .scheme-switcher.hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .scheme-switcher {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+
+            .toggle-switcher {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Thanksgiving Popup -->
-    <div id="thanksgivingPopup" class="popup-overlay hidden">
-        <div class="popup-content">
-            <button class="popup-close-x" onclick="closeThanksgivingPopup()">&times;</button>
-            <div class="popup-icon">🦃</div>
-            <h2>Happy Thanksgiving!</h2>
-            <p>We will be closed for Thanksgiving week to spend time with our families. We'll be back to serve you after the holiday.</p>
-            <p><strong>Closed: November 25 - November 29, 2025</strong></p>
-            <p>We wish you and your loved ones a wonderful Thanksgiving!</p>
-            <button class="popup-close-btn" onclick="closeThanksgivingPopup()">Got It, Thanks!</button>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -36,11 +155,11 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
                     <li><a href="tel:510-490-8883" class="nav-cta">Call Now</a></li>
                 </ul>
             </div>
@@ -55,8 +174,8 @@
                 <h1 class="hero-title">Trusted Auto Repair in Fremont Since 1995</h1>
                 <p class="hero-subtitle">Expert automotive services with integrity and precision. Your trusted automotive partner for nearly 30 years.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Schedule Appointment</a>
-                    <a href="services.html" class="btn btn-secondary">Our Services</a>
+                    <a href="#" class="btn btn-primary">Schedule Appointment</a>
+                    <a href="#" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
         </div>
@@ -116,7 +235,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">01</div>
                     <h3>Expert Technicians</h3>
-                    <p>Our experienced professionals bring years of experience to ensure your vehicle performs at its best.</p>
+                    <p>Our certified professionals bring years of experience to ensure your vehicle performs at its best.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">02</div>
@@ -171,7 +290,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="services.html" class="btn btn-primary">View All Services</a>
+                <a href="#" class="btn btn-primary">View All Services</a>
             </div>
         </div>
     </section>
@@ -201,7 +320,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="testimonials.html" class="btn btn-secondary">Read More Reviews</a>
+                <a href="#" class="btn btn-secondary">Read More Reviews</a>
             </div>
         </div>
     </section>
@@ -210,14 +329,14 @@
     <section class="trust-section">
         <div class="container">
             <div class="section-header">
-                <h2>Trusted & Experienced</h2>
+                <h2>Certified & Trusted</h2>
                 <p>Your peace of mind is our priority</p>
             </div>
             <div class="trust-grid">
                 <div class="trust-badge">
                     <div class="trust-icon">ASE</div>
-                    <h4>Expert Technicians</h4>
-                    <p>Our team has extensive training ensuring expert service</p>
+                    <h4>ASE Certified Technicians</h4>
+                    <p>Our team holds ASE certifications ensuring expert service</p>
                 </div>
                 <div class="trust-badge">
                     <div class="trust-icon">1995</div>
@@ -226,8 +345,8 @@
                 </div>
                 <div class="trust-badge">
                     <div class="trust-icon">CA</div>
-                    <h4>Fully Insured</h4>
-                    <p>Fully insured and bonded auto repair facility</p>
+                    <h4>California Licensed</h4>
+                    <p>Fully licensed and insured auto repair facility</p>
                 </div>
                 <div class="trust-badge">
                     <div class="trust-icon">FAW</div>
@@ -252,7 +371,7 @@
                 </div>
                 <div class="faq-item">
                     <h3>What makes and models do you service?</h3>
-                    <p>We service all makes and models, including domestic, Asian, and European vehicles. Our expert technicians have the expertise and equipment to handle everything from routine maintenance to complex repairs.</p>
+                    <p>We service all makes and models, including domestic, Asian, and European vehicles. Our ASE-certified technicians have the expertise and equipment to handle everything from routine maintenance to complex repairs.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Do you provide free estimates?</h3>
@@ -281,7 +400,7 @@
             <p>Call us today or schedule an appointment online</p>
             <div class="cta-buttons">
                 <a href="tel:510-490-8883" class="btn btn-primary">Call 510-490-8883</a>
-                <a href="contact.html" class="btn btn-secondary">Schedule Online</a>
+                <a href="#" class="btn btn-secondary">Schedule Online</a>
             </div>
         </div>
     </section>
@@ -314,11 +433,11 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -344,6 +463,184 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Color Scheme Switcher -->
+    <button class="toggle-switcher" id="toggleSwitcher" onclick="toggleSwitcher()">🎨</button>
+
+    <div class="scheme-switcher hidden" id="schemeSwitcher">
+        <h3>🎨 Sky Blue + Yellow Variations</h3>
+        <p class="subtitle">Click to preview different yellow accent colors</p>
+        <div class="scheme-buttons">
+            <button class="scheme-btn active" onclick="changeScheme('original')">
+                <span class="scheme-name">Original (Current)</span>
+                <span class="scheme-desc">Forest Green & Natural</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #1b5e20;"></span>
+                    <span class="scheme-color" style="background: #0d3d11;"></span>
+                    <span class="scheme-color" style="background: #2e7d32;"></span>
+                </div>
+            </button>
+
+            <button class="scheme-btn" onclick="changeScheme('sky-blue-1')">
+                <span class="scheme-name">Sky Blue + Amber</span>
+                <span class="scheme-desc">Warm & Professional</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #0288D1;"></span>
+                    <span class="scheme-color" style="background: #01579B;"></span>
+                    <span class="scheme-color" style="background: #FFA726;"></span>
+                </div>
+            </button>
+
+            <button class="scheme-btn" onclick="changeScheme('sky-blue-2')">
+                <span class="scheme-name">Sky Blue + Golden Yellow</span>
+                <span class="scheme-desc">Bright & Energetic</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #0288D1;"></span>
+                    <span class="scheme-color" style="background: #01579B;"></span>
+                    <span class="scheme-color" style="background: #FFC107;"></span>
+                </div>
+            </button>
+
+            <button class="scheme-btn" onclick="changeScheme('sky-blue-3')">
+                <span class="scheme-name">Sky Blue + Mustard</span>
+                <span class="scheme-desc">Bold & Vintage-Inspired</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #0288D1;"></span>
+                    <span class="scheme-color" style="background: #01579B;"></span>
+                    <span class="scheme-color" style="background: #F9A825;"></span>
+                </div>
+            </button>
+
+            <button class="scheme-btn" onclick="changeScheme('sky-blue-4')">
+                <span class="scheme-name">Sky Blue + Deep Gold</span>
+                <span class="scheme-desc">Premium & Sophisticated</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #0288D1;"></span>
+                    <span class="scheme-color" style="background: #01579B;"></span>
+                    <span class="scheme-color" style="background: #FF8F00;"></span>
+                </div>
+            </button>
+
+            <button class="scheme-btn" onclick="changeScheme('sky-blue-5')">
+                <span class="scheme-name">Sky Blue + Bright Yellow</span>
+                <span class="scheme-desc">High-Energy & Modern</span>
+                <div class="scheme-colors">
+                    <span class="scheme-color" style="background: #0288D1;"></span>
+                    <span class="scheme-color" style="background: #01579B;"></span>
+                    <span class="scheme-color" style="background: #FFEB3B;"></span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Color scheme switcher functionality
+        function changeScheme(scheme) {
+            const link = document.getElementById('colorSchemeLink');
+            const buttons = document.querySelectorAll('.scheme-btn');
+
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            event.target.closest('.scheme-btn').classList.add('active');
+
+            // Change the color scheme
+            if (scheme === 'original') {
+                link.href = '';
+            } else {
+                link.href = `color-schemes/${scheme}-${getSchemeFileName(scheme)}.css`;
+            }
+
+            // Save preference
+            localStorage.setItem('selectedScheme', scheme);
+        }
+
+        function getSchemeFileName(scheme) {
+            const names = {
+                'sky-blue-1': 'amber',
+                'sky-blue-2': 'golden-yellow',
+                'sky-blue-3': 'mustard',
+                'sky-blue-4': 'deep-gold',
+                'sky-blue-5': 'bright-yellow'
+            };
+            return names[scheme] || '';
+        }
+
+        function toggleSwitcher() {
+            const switcher = document.getElementById('schemeSwitcher');
+            switcher.classList.toggle('hidden');
+        }
+
+        // Load saved preference on page load
+        window.addEventListener('load', function() {
+            const savedScheme = localStorage.getItem('selectedScheme');
+            if (savedScheme && savedScheme !== 'original') {
+                const link = document.getElementById('colorSchemeLink');
+                link.href = `color-schemes/${savedScheme}-${getSchemeFileName(savedScheme)}.css`;
+
+                // Update button state
+                document.querySelectorAll('.scheme-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('onclick').includes(savedScheme)) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Close color switcher when clicking outside
+        document.addEventListener('click', (e) => {
+            const switcher = document.getElementById('schemeSwitcher');
+            const toggleBtn = document.getElementById('toggleSwitcher');
+
+            if (!switcher.contains(e.target) && e.target !== toggleBtn) {
+                switcher.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

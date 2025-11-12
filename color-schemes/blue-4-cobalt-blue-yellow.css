@@ -1,0 +1,49 @@
+/* Blue Variation 4: Cobalt Blue & Yellow */
+/* Bold, energetic, classic combination with high contrast */
+
+:root {
+    /* Primary Colors - Cobalt Blue */
+    --primary-color: #1976D2;        /* Cobalt Blue */
+    --primary-dark: #1565C0;         /* Deep Cobalt */
+    --accent-green: #FDD835;         /* Bright Yellow accent */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #1a1a1a;            /* Near Black */
+    --text-light: #666666;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #E3F2FD;            /* Light Blue tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(25, 118, 210, 0.15);  /* Cobalt Blue shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 50%, #1E88E5 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 50%, #1E88E5 100%) !important;
+}
+
+.cta,
+.cta-section {
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%) !important;
+}
+
+/* Add yellow accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #FDD835 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FDD835, #FBC02D) !important;
+}

@@ -1,0 +1,48 @@
+/* Color Scheme 4: Charcoal & Electric Blue */
+/* Modern, sleek, high-tech professional feel */
+
+:root {
+    /* Primary Colors - Charcoal & Electric Blue */
+    --primary-color: #37474F;        /* Dark Charcoal Blue-Gray */
+    --primary-dark: #263238;         /* Very Dark Blue-Gray */
+    --accent-green: #00B0FF;         /* Electric Blue accent */
+
+    /* Neutral Colors */
+    --secondary-color: #212121;      /* Near Black */
+    --text-dark: #212121;            /* Near Black */
+    --text-light: #757575;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #ECEFF1;            /* Light Blue-Gray */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(55, 71, 79, 0.15);  /* Charcoal shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #263238 0%, #37474F 50%, #455A64 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #263238 0%, #37474F 50%, #455A64 100%) !important;
+}
+
+.cta {
+    background: linear-gradient(135deg, #263238 0%, #37474F 100%) !important;
+}
+
+/* Add electric blue accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #00B0FF !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00B0FF, #0091EA) !important;
+}

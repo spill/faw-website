@@ -1,0 +1,49 @@
+/* Blue Variation 5: Azure & Rust Orange */
+/* Bright, modern, balanced warmth and coolness */
+
+:root {
+    /* Primary Colors - Azure */
+    --primary-color: #0277BD;        /* Azure Blue */
+    --primary-dark: #01579B;         /* Deep Azure */
+    --accent-green: #FF6F00;         /* Rust Orange accent */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #1a1a1a;            /* Near Black */
+    --text-light: #666666;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #E1F5FE;            /* Light Azure tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(2, 119, 189, 0.15);  /* Azure Blue shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 50%, #0288D1 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 50%, #0288D1 100%) !important;
+}
+
+.cta,
+.cta-section {
+    background: linear-gradient(135deg, #01579B 0%, #0277BD 100%) !important;
+}
+
+/* Add rust orange accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #FF6F00 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FF6F00, #E65100) !important;
+}

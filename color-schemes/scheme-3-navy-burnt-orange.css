@@ -1,0 +1,48 @@
+/* Color Scheme 3: Navy & Burnt Orange */
+/* Professional, warm, trustworthy feel */
+
+:root {
+    /* Primary Colors - Navy Blue */
+    --primary-color: #1A237E;        /* Deep Navy */
+    --primary-dark: #0D1642;         /* Very Dark Navy */
+    --accent-green: #E65100;         /* Burnt Orange accent */
+
+    /* Neutral Colors */
+    --secondary-color: #263238;      /* Blue-Gray Dark */
+    --text-dark: #263238;            /* Blue-Gray Dark */
+    --text-light: #607D8B;           /* Blue-Gray Medium */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #E8EAF6;            /* Light Indigo tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(26, 35, 126, 0.15);  /* Navy shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #0D1642 0%, #1A237E 50%, #283593 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #0D1642 0%, #1A237E 50%, #283593 100%) !important;
+}
+
+.cta {
+    background: linear-gradient(135deg, #0D1642 0%, #1A237E 100%) !important;
+}
+
+/* Add burnt orange accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #E65100 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #E65100, #D84315) !important;
+}

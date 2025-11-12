@@ -1,0 +1,48 @@
+/* Color Scheme 5: Deep Purple & Gold */
+/* Premium, sophisticated, luxury service feel */
+
+:root {
+    /* Primary Colors - Deep Purple */
+    --primary-color: #4A148C;        /* Deep Purple */
+    --primary-dark: #311B92;         /* Very Dark Purple */
+    --accent-green: #F9A825;         /* Rich Gold accent */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #1a1a1a;            /* Near Black */
+    --text-light: #666666;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #F3E5F5;            /* Light Purple tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(74, 20, 140, 0.15);  /* Purple shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #311B92 0%, #4A148C 50%, #6A1B9A 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #311B92 0%, #4A148C 50%, #6A1B9A 100%) !important;
+}
+
+.cta {
+    background: linear-gradient(135deg, #311B92 0%, #4A148C 100%) !important;
+}
+
+/* Add gold accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #F9A825 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #F9A825, #F57F17) !important;
+}

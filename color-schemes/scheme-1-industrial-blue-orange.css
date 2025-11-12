@@ -1,0 +1,48 @@
+/* Color Scheme 1: Industrial Blue & Orange */
+/* Professional, energetic, classic mechanic workshop feel */
+
+:root {
+    /* Primary Colors - Industrial Blue */
+    --primary-color: #1565C0;        /* Strong Blue */
+    --primary-dark: #0D47A1;         /* Deep Navy Blue */
+    --accent-green: #FB8C00;         /* Vibrant Orange accent */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #1a1a1a;            /* Near Black */
+    --text-light: #666666;           /* Medium Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #E3F2FD;            /* Light Blue tint */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(21, 101, 192, 0.15);  /* Blue shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%) !important;
+}
+
+.cta {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%) !important;
+}
+
+/* Add orange accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #FB8C00 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FB8C00, #F57C00) !important;
+}

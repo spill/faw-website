@@ -1,0 +1,49 @@
+/* Blue Variation 3: Steel Blue & Copper */
+/* Industrial, metallic, strong professional feel */
+
+:root {
+    /* Primary Colors - Steel Blue */
+    --primary-color: #455A64;        /* Steel Blue */
+    --primary-dark: #263238;         /* Deep Steel Blue */
+    --accent-green: #D84315;         /* Copper/Rust accent */
+
+    /* Neutral Colors */
+    --secondary-color: #1a1a1a;      /* Near Black */
+    --text-dark: #212121;            /* Dark Gray */
+    --text-light: #607D8B;           /* Blue-Gray */
+
+    /* Background Colors */
+    --bg-light: #fafafa;             /* Light Gray */
+    --bg-accent: #ECEFF1;            /* Light Blue-Gray */
+    --white: #ffffff;                /* Pure White */
+
+    /* Shadows */
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-colored: 0 8px 25px rgba(69, 90, 100, 0.15);  /* Steel Blue shadow */
+}
+
+/* Override hardcoded gradients */
+.hero {
+    background: linear-gradient(135deg, #263238 0%, #455A64 50%, #546E7A 100%) !important;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #263238 0%, #455A64 50%, #546E7A 100%) !important;
+}
+
+.cta,
+.cta-section {
+    background: linear-gradient(135deg, #263238 0%, #455A64 100%) !important;
+}
+
+/* Add copper accent highlights */
+.stat-number,
+.service-icon,
+.feature-icon {
+    color: #D84315 !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #D84315, #BF360C) !important;
+}
