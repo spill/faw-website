@@ -28,26 +28,100 @@ if (mobileMenuToggle) {
 
 // Thanksgiving Popup
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if popup has been shown in this session
-    const popupShown = sessionStorage.getItem('thanksgivingPopupShown');
-    
-    if (!popupShown) {
+    // Configuration for this specific popup
+    const popupConfig = {
+        id: 'thanksgiving2025',  // Unique ID for this popup
+        startDate: new Date('2025-11-01'),  // Start showing Nov 1
+        endDate: new Date('2025-12-01'),    // Stop showing Dec 1
+        storageType: 'session'  // 'session' or 'local' - session clears when browser closes
+    };
+
+    // FOR DECEMBER: Just change the config above to:
+    // id: 'christmas2025',
+    // startDate: new Date('2025-12-01'),
+    // endDate: new Date('2026-01-01'),
+    // And update the ID in closeThanksgivingPopup() to match
+
+    // Check if we should show the popup
+    const today = new Date();
+    const storage = popupConfig.storageType === 'session' ? sessionStorage : localStorage;
+    const popupShown = storage.getItem(`popup_${popupConfig.id}`);
+
+    // Show popup if:
+    // 1. It hasn't been shown yet (or use !popupShown to always check)
+    // 2. Current date is within the date range
+    const shouldShow = !popupShown && today >= popupConfig.startDate && today < popupConfig.endDate;
+
+    if (shouldShow) {
         // Show popup after a short delay
         setTimeout(() => {
             const popup = document.getElementById('thanksgivingPopup');
             if (popup) {
                 popup.classList.remove('hidden');
+                // Start falling leaves animation
+                createFallingLeaves();
             }
         }, 1000);
     }
 });
 
+// Create falling leaves animation
+function createFallingLeaves() {
+    const leavesContainer = document.getElementById('leavesContainer');
+    if (!leavesContainer) {
+        console.log('Leaves container not found!');
+        return;
+    }
+
+    console.log('Creating falling leaves...');
+
+    // Clear any existing leaves
+    leavesContainer.innerHTML = '';
+
+    // Leaf emojis to use
+    const leafTypes = ['🍂', '🍁', '🍃'];
+    const numberOfLeaves = 30;
+
+    // Create leaves
+    for (let i = 0; i < numberOfLeaves; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'leaf';
+        leaf.textContent = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+
+        // Random horizontal position
+        leaf.style.left = Math.random() * 100 + '%';
+
+        // Random animation duration (6-12 seconds for variety)
+        const fallDuration = 6 + Math.random() * 6;
+        leaf.style.animationDuration = `${fallDuration}s`;
+
+        // Random delay to stagger the leaves
+        leaf.style.animationDelay = `${Math.random() * 3}s`;
+
+        leavesContainer.appendChild(leaf);
+    }
+
+    console.log(`Created ${numberOfLeaves} leaves`);
+}
+
 // Close popup function
 function closeThanksgivingPopup() {
     const popup = document.getElementById('thanksgivingPopup');
+    const leavesContainer = document.getElementById('leavesContainer');
+
     if (popup) {
         popup.classList.add('hidden');
-        sessionStorage.setItem('thanksgivingPopupShown', 'true');
+
+        // Store that this specific popup was shown using the same ID
+        // Change 'session' to 'local' if you want it to persist across browser sessions
+        const storageType = 'session';
+        const storage = storageType === 'session' ? sessionStorage : localStorage;
+        storage.setItem('popup_thanksgiving2025', 'true');
+
+        // Remove all leaves
+        if (leavesContainer) {
+            leavesContainer.innerHTML = '';
+        }
     }
 }
 
