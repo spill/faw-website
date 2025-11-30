@@ -26,21 +26,15 @@ if (mobileMenuToggle) {
     });
 }
 
-// Thanksgiving Popup
+// Christmas Popup
 document.addEventListener('DOMContentLoaded', () => {
     // Configuration for this specific popup
     const popupConfig = {
-        id: 'thanksgiving2025',  // Unique ID for this popup
-        startDate: new Date('2025-11-01'),  // Start showing Nov 1
-        endDate: new Date('2025-12-01'),    // Stop showing Dec 1
+        id: 'christmas2025',  // Unique ID for this popup
+        startDate: new Date('2025-12-01'),  // Start showing Dec 1
+        endDate: new Date('2026-01-01'),    // Stop showing Jan 1
         storageType: 'session'  // 'session' or 'local' - session clears when browser closes
     };
-
-    // FOR DECEMBER: Just change the config above to:
-    // id: 'christmas2025',
-    // startDate: new Date('2025-12-01'),
-    // endDate: new Date('2026-01-01'),
-    // And update the ID in closeThanksgivingPopup() to match
 
     // Check if we should show the popup
     const today = new Date();
@@ -55,59 +49,59 @@ document.addEventListener('DOMContentLoaded', () => {
     if (shouldShow) {
         // Show popup after a short delay
         setTimeout(() => {
-            const popup = document.getElementById('thanksgivingPopup');
+            const popup = document.getElementById('christmasPopup');
             if (popup) {
                 popup.classList.remove('hidden');
-                // Start falling leaves animation
-                createFallingLeaves();
+                // Start falling snowflakes animation
+                createFallingSnowflakes();
             }
         }, 1000);
     }
 });
 
-// Create falling leaves animation
-function createFallingLeaves() {
-    const leavesContainer = document.getElementById('leavesContainer');
-    if (!leavesContainer) {
-        console.log('Leaves container not found!');
+// Create falling snowflakes animation
+function createFallingSnowflakes() {
+    const snowflakesContainer = document.getElementById('snowflakesContainer');
+    if (!snowflakesContainer) {
+        console.log('Snowflakes container not found!');
         return;
     }
 
-    console.log('Creating falling leaves...');
+    console.log('Creating falling snowflakes...');
 
-    // Clear any existing leaves
-    leavesContainer.innerHTML = '';
+    // Clear any existing snowflakes
+    snowflakesContainer.innerHTML = '';
 
-    // Leaf emojis to use
-    const leafTypes = ['🍂', '🍁', '🍃'];
-    const numberOfLeaves = 30;
+    // Christmas emojis to use
+    const christmasItems = ['❄️', '🎄', '⭐', '🎁', '🔔', '❄️', '❄️', '⭐'];
+    const numberOfItems = 30;
 
-    // Create leaves
-    for (let i = 0; i < numberOfLeaves; i++) {
-        const leaf = document.createElement('div');
-        leaf.className = 'leaf';
-        leaf.textContent = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+    // Create snowflakes and Christmas items
+    for (let i = 0; i < numberOfItems; i++) {
+        const item = document.createElement('div');
+        item.className = 'snowflake';
+        item.textContent = christmasItems[Math.floor(Math.random() * christmasItems.length)];
 
         // Random horizontal position
-        leaf.style.left = Math.random() * 100 + '%';
+        item.style.left = Math.random() * 100 + '%';
 
         // Random animation duration (6-12 seconds for variety)
         const fallDuration = 6 + Math.random() * 6;
-        leaf.style.animationDuration = `${fallDuration}s`;
+        item.style.animationDuration = `${fallDuration}s`;
 
-        // Random delay to stagger the leaves
-        leaf.style.animationDelay = `${Math.random() * 3}s`;
+        // Random delay to stagger the items
+        item.style.animationDelay = `${Math.random() * 3}s`;
 
-        leavesContainer.appendChild(leaf);
+        snowflakesContainer.appendChild(item);
     }
 
-    console.log(`Created ${numberOfLeaves} leaves`);
+    console.log(`Created ${numberOfItems} Christmas items`);
 }
 
 // Close popup function
-function closeThanksgivingPopup() {
-    const popup = document.getElementById('thanksgivingPopup');
-    const leavesContainer = document.getElementById('leavesContainer');
+function closeChristmasPopup() {
+    const popup = document.getElementById('christmasPopup');
+    const snowflakesContainer = document.getElementById('snowflakesContainer');
 
     if (popup) {
         popup.classList.add('hidden');
@@ -116,20 +110,20 @@ function closeThanksgivingPopup() {
         // Change 'session' to 'local' if you want it to persist across browser sessions
         const storageType = 'session';
         const storage = storageType === 'session' ? sessionStorage : localStorage;
-        storage.setItem('popup_thanksgiving2025', 'true');
+        storage.setItem('popup_christmas2025', 'true');
 
-        // Remove all leaves
-        if (leavesContainer) {
-            leavesContainer.innerHTML = '';
+        // Remove all snowflakes
+        if (snowflakesContainer) {
+            snowflakesContainer.innerHTML = '';
         }
     }
 }
 
 // Close popup when clicking outside
 document.addEventListener('click', (e) => {
-    const popup = document.getElementById('thanksgivingPopup');
+    const popup = document.getElementById('christmasPopup');
     if (popup && e.target === popup) {
-        closeThanksgivingPopup();
+        closeChristmasPopup();
     }
 });
 
