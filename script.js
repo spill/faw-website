@@ -1,3 +1,40 @@
+// Subtle Snow Effect
+document.addEventListener('DOMContentLoaded', () => {
+    createSubtleSnow();
+});
+
+function createSubtleSnow() {
+    const snowContainer = document.getElementById('snowEffect');
+    if (!snowContainer) return;
+
+    const numberOfDots = 35; // Keep it subtle
+
+    for (let i = 0; i < numberOfDots; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'snow-dot';
+
+        // Random horizontal position
+        dot.style.left = Math.random() * 100 + '%';
+
+        // Random size (2-5px)
+        const size = 2 + Math.random() * 3;
+        dot.style.width = size + 'px';
+        dot.style.height = size + 'px';
+
+        // Random animation duration (8-15 seconds for slow, gentle fall)
+        const duration = 8 + Math.random() * 7;
+        dot.style.animationDuration = duration + 's';
+
+        // Random delay so they don't all start at once
+        dot.style.animationDelay = Math.random() * 10 + 's';
+
+        // Random opacity (0.3-0.6 for subtlety)
+        dot.style.opacity = 0.3 + Math.random() * 0.3;
+
+        snowContainer.appendChild(dot);
+    }
+}
+
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
