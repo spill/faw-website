@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuration for this specific popup
     const popupConfig = {
         id: 'christmas2025',  // Unique ID for this popup
-        startDate: new Date('2025-12-01'),  // Start showing Dec 1
+        startDate: new Date('2025-11-29'),  // Start showing Nov 29
         endDate: new Date('2026-01-01'),    // Stop showing Jan 1
         storageType: 'session'  // 'session' or 'local' - session clears when browser closes
     };
