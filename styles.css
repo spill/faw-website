@@ -1537,6 +1537,47 @@ section {
     gap: 0.5rem;
 }
 
+
+.hiring-job-detail {
+    background: var(--white);
+    border: 1px solid rgba(2, 136, 209, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(13, 58, 102, 0.08);
+    padding: 2rem;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.hiring-job-detail h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-dark);
+}
+
+.hiring-job-detail h4 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.hiring-job-detail ul {
+    margin-left: 1.2rem;
+}
+
+.hiring-job-detail li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.hiring-job-detail p {
+    color: var(--text-light);
+}
+
+.hiring-note {
+    font-weight: 600;
+    color: var(--text-dark) !important;
+}
+
 /* Mobile Responsiveness */
 /* Tablet and medium screens */
 @media (max-width: 1024px) and (min-width: 769px) {
