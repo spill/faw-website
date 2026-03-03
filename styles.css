@@ -1573,10 +1573,6 @@ section {
     color: var(--text-light);
 }
 
-.hiring-note {
-    font-weight: 600;
-    color: var(--text-dark) !important;
-}
 
 /* Mobile Responsiveness */
 /* Tablet and medium screens */
